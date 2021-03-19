@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    {% if user.is_authenticated %}
+        <div class="mt-5">Добро пожаловать на сайт {{ user.username }}</div>
+    {% else %}
+        <div class="mt-5">Войдите в систему для доступа к личному кабинету</div>
+    {% endif %}
+    <p><a href="{% url "search" %}">страница с поиском</a></p>
+    <img src="{% static 'images/taison.jpg' %}" alt="taison_main">
+{% endblock %}
